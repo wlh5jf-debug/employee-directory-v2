@@ -25,6 +25,11 @@ export function addEmployee(name) {
   return employee;
 }
 
+export function getRandomEmployee() {
+  const randomIndex = Math.floor(Math.random() * employees.length);
+  return employees[randomIndex];
+}
+
 
 /* WARNING: this must remain the default export in order for the tests to work! */
 export default employees;

@@ -22,13 +22,6 @@ app.get("/", (req, res) => {
 
 
 
-
-
-app.get("/employees/random", (req, res) => {
-  const randomIndex = Math.floor(Math.random() * employees.length);
-  res.send(employees[randomIndex]);
-});
-
 app.use("/employees", employeesRouter);
 
 

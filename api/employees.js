@@ -1,6 +1,6 @@
 import express from "express"
 const router = express.Router();
-import { getEmployees, addEmployee, getEmployeeById } from "#db/employees";
+import { getEmployees, addEmployee, getEmployeeById, getRandomEmployee } from "#db/employees";
 export default router;
 
 router.get("/", (req, res) => {
@@ -17,6 +17,12 @@ router.post("/", (req, res) => {
     const employee = addEmployee(name);
     res.status(201).send(employee);
 });
+
+router.get("/random", (req, res) => {
+  const employee = getRandomEmployee();
+  res.send(employee);
+});
+
 
 router.get("/:id", (req, res) => {
     const { id } = req.params;
